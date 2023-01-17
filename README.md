@@ -3,7 +3,7 @@ Example, bundle library as ECMAScript / ES6 module using VITE,,,, to be used in 
 
 So we use third party library `axios` to consume a REST service.
 
-We bundle our own code and all dependencies (yes only axios) into a cjs bundle.
+We bundle our own code and all dependencies (yes only axios) into a ES6 module bundle.
 
 **To fully undstand what is going on, why this work.**
 - Try out the example
