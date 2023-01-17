@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS + a library</title>
+</head>
+
+<body>
+  <article class="container">
+    <div id="table"></div>
+  </article>
+
+  <script src="./dist/my-lib.umd.cjs"></script>
+
+  <script type="module">
+    const users = await MyLib.getUsers();
+    function printUser(user) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
+      document.getElementById("table").appendChild(tr);
+    }
+    users.map(printUser);
+
+  </script>
+</body>
+
+</html>
