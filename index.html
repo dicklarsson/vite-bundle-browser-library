@@ -28,31 +28,19 @@
 
     const users = await getUsers();
 
-    function printUser(user) {
+    function addUser(user) {
       const tr = document.createElement("tr");
-      tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
+
+      tr.innerHTML = `  <td>${user.first_name}</td>    
+                        <td>${user.last_name}</td>    
+                        <td>${user.email}</td>`;
+
       document.getElementById("tbody").appendChild(tr);
     }
-    
-    users.map(printUser);
+
+    users.map(addUser);
 
   </script>
-  <!--
-  <script src="./dist/my-lib.umd.cjs"></script>
-
-  <script type="module">
-
-    const users = await MyLib.getUsers();
-    function printUser(user) {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
-      document.getElementById("tbody").appendChild(tr);
-    }
-    users.map(printUser);
-
-  </script>
-  -->
-
 
 </body>
 

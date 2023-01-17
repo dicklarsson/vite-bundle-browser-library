@@ -36,17 +36,21 @@ Load and use the library in the browser
 ``` 
 <script type="module">
 
-  import { getUsers } from "./dist/my-lib.js";
+    import { getUsers } from "./dist/my-lib.js";
 
-  const users = await getUsers();
+    const users = await getUsers();
 
-  function printUser(user) {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
-    document.getElementById("tbody").appendChild(tr);
-  }
+    function addUser(user) {
+      const tr = document.createElement("tr");
 
-  users.map(printUser);
+      tr.innerHTML = `  <td>${user.first_name}</td>    
+                        <td>${user.last_name}</td>    
+                        <td>${user.email}</td>`;
 
-</script>
+      document.getElementById("tbody").appendChild(tr);
+    }
+
+    users.map(addUser);
+
+  </script>
 ```
