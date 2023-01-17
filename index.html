@@ -25,14 +25,16 @@
   <script type="module">
 
     import { getUsers } from "./dist/my-lib.js";
+
     const users = await getUsers();
+
     function printUser(user) {
       const tr = document.createElement("tr");
       tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
       document.getElementById("tbody").appendChild(tr);
     }
+    
     users.map(printUser);
-
 
   </script>
   <!--

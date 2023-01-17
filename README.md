@@ -20,16 +20,16 @@ npm run build
 
 ## Test
 
-In the projects working directory run ```
+In the projects working directory run 
+```
 npx serve
-´´´
+```
  
 
 ## Code
 
 Load and use the library in the browser
-```
- 
+``` 
 <script type="module">
 
   import { getUsers } from "./dist/my-lib.js";
