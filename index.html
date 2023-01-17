@@ -22,6 +22,20 @@
     </table>
   </article>
 
+  <script type="module">
+
+    import { getUsers } from "./dist/my-lib.js";
+    const users = await getUsers();
+    function printUser(user) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
+      document.getElementById("tbody").appendChild(tr);
+    }
+    users.map(printUser);
+
+
+  </script>
+  <!--
   <script src="./dist/my-lib.umd.cjs"></script>
 
   <script type="module">
@@ -35,6 +49,9 @@
     users.map(printUser);
 
   </script>
+  -->
+
+
 </body>
 
 </html>

@@ -20,7 +20,10 @@ npm run build
 
 ## Test
 
-Open the `test.html` file in the root folder
+In the projects working directory run ```
+npx serve
+´´´
+ 
 
 ## Code
 
