@@ -1,5 +1,5 @@
 # vite-bundle-browser-library
-Example, bundle library using VITE to be used in web browsers
+Example, bundle library as ECMAScript module using VITE,,,, to be used in web browsers
 
 So we use third party library `axios` to consume a REST service.
 
@@ -29,17 +29,20 @@ npx serve
 
 Load and use the library in the browser
 ```
-  <script src="./dist/my-lib.umd.cjs"></script>
+ 
+<script type="module">
 
-  <script type="module">
-    
-    const users = await MyLib.getUsers();
-    function printUser(user) {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
-      document.getElementById("table").appendChild(tr);
-    }
-    users.map(printUser);
+  import { getUsers } from "./dist/my-lib.js";
 
-  </script>
+  const users = await getUsers();
+
+  function printUser(user) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${user.first_name}</td><td>${user.last_name}</td><td>${user.email}</td>`;
+    document.getElementById("tbody").appendChild(tr);
+  }
+
+  users.map(printUser);
+
+</script>
 ```
