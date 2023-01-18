@@ -1,9 +1,12 @@
 # vite-bundle-browser-library
-Example, bundle library as ECMAScript / ES6 module using VITE,,,, to be used in web browsers
+This is what we want, a simple library with external dependencies (axios) that
 
-So we use third party library `axios` to consume a REST service.
+- Can be consumed as ECMScript module by a browser with dependencies bundled
+- Can be consumed as ECMScript module in Node.js WITHOUT dependencies bundled.
 
-We bundle our own code and all dependencies (yes only axios) into a ES6 module bundle.
+ * Parcel is great for bundling a lib WITHOUT dependencies
+ * VITE is great for bundling a lib WITH dependencies
+ Lets use both
 
 **To fully undstand what is going on, why this work.**
 - Try out the example
@@ -34,9 +37,9 @@ npx serve
 
 Load and use the library in the browser
 ``` 
-<script type="module">
+ <script type="module">
 
-    import { getUsers } from "./dist/my-lib.js";
+    import { getUsers } from "./dist/my-lib-browser.js";
 
     const users = await getUsers();
 
